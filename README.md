@@ -9,9 +9,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
+Required:
+
 ![notebook](https://img.shields.io/badge/notebook-v6.1-brightgreen)
 ![matplotlib](https://img.shields.io/badge/matplotlib-v3.3-brightgreen)
 ![Numpy](https://img.shields.io/badge/Numpy-v1.19-brightgreen)
+![tqdm](https://img.shields.io/badge/tqdm-v4.55-brightgreen)
+
+Optional:
+
+![TensorFlow](https://img.shields.io/badge/TensorFlow-v2.4-brightgreen)
 
 ### Installing
 
