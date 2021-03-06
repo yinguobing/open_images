@@ -126,11 +126,11 @@ def create_tf_example(example, min_size=None):
         'image/filename': bytes_feature(filename),
         'image/encoded': bytes_feature(encoded_image_data),
         'image/format': bytes_feature(image_format),
-        'faces/bbox/ymin': float_list_feature(ymin),
-        'faces/bbox/xmin': float_list_feature(xmin),
-        'faces/bbox/ymax': float_list_feature(ymax),
-        'faces/bbox/xmax': float_list_feature(xmax),
-        'faces/label': int64_list_feature(classes)
+        'image/object/bbox/ymin': float_list_feature(ymin),
+        'image/object/bbox/xmin': float_list_feature(xmin),
+        'image/object/bbox/ymax': float_list_feature(ymax),
+        'image/object/bbox/xmax': float_list_feature(xmax),
+        'image/object/class/label': int64_list_feature(classes)
     }))
 
     return tf_example
