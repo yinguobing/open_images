@@ -62,7 +62,7 @@ class DetectionSample(object):
         return img
 
 
-def create_tf_example(example, min_size=None):
+def create_tf_example(example, min_size=None, max_samples=100):
 
     img = example.read_image()
     height, width, _ = img.shape
@@ -101,6 +101,11 @@ def create_tf_example(example, min_size=None):
         ymin = ymin[mask]
         wbox = wbox[mask]
         hbox = hbox[mask]
+        
+        # Incase too many boxes.
+        if xmin.shape[0] > max_samples:
+            print("Too many boxes: {}.".format(xmin.shape[0]))
+            return None
 
     # In case the coordinates are flipped.
     xs = np.concatenate((xmin, xmin+wbox), axis=-1)
